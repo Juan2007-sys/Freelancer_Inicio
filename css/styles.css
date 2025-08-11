@@ -1,0 +1,352 @@
+/* ==============================
+   VARIABLES DE COLOR (NUEVA GAMA: TONOS FRÍOS Y MODERNOS)
+============================== */
+:root {
+    --blanco: #F0F8FF; 
+    --negro: #023E8A; 
+    --primario: #0077B6; 
+    --secundario: #48CAE4; 
+    --terciario: #03045E; 
+    --gris-claro: #CAF0F8; 
+    --gris-medio: #A0DAF0; 
+    --texto-oscuro: #001845; 
+}
+
+/* ==============================
+   RESET Y CONFIGURACIÓN GLOBAL
+============================== */
+html {
+    font-size: 62.5%; /* Facilita el uso de rem */
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory; /* Permite el scroll snap vertical */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+} 
+
+/**scroll snap */
+.sevicios,
+.navegacion-principal,
+.formulario {
+    scroll-snap-align: center; /* Alinea el contenedor al centro del viewport */
+    scroll-snap-stop: always; /* Asegura que el scroll se detenga en este contenedor */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* ==============================
+   ESTILOS GENERALES DEL BODY
+============================== */
+body {
+    font-family: "Montserrat Alternates", sans-serif;
+    /* Usando la nueva variable para el fondo del gradiente */
+    background-image: linear-gradient(to top, var(--gris-claro) 0%, var(--blanco) 100%);
+    color: var(--texto-oscuro); /* Nuevo color de texto principal */
+}
+
+/* ==============================
+   TITULOS
+============================== */
+h1 {
+    font-size: 4.0rem;
+    color: var(--negro); 
+}
+h2 {
+    font-size: 2.8rem;
+    color: var(--negro); 
+}
+h3 {
+    font-size: 2.0rem;
+    color: var(--negro); 
+}
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* ==============================
+   ESTILO DEL TITULO PRINCIPAL
+============================== */
+.titulo {
+    font-weight: 400;
+    font-style: italic;
+    color: var(--negro); /* Nuevo color para el título */
+}
+.titulo span {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primario); /* Color primario para el span */
+}
+
+/* ==============================
+   CONTENEDOR GENERAL
+============================== */
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/* ==============================
+   BOTÓN PRINCIPAL
+============================== */
+.boton {
+    background-color: var(--primario); /* Color primario para el botón */
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+    display: inline-block; /* Asegura que las propiedades de ancho y padding funcionen */
+    transition: background-color .3s ease, transform .3s ease, box-shadow .3s ease; /* Animaciones */
+    box-shadow: 0px 4px 10px rgba(0, 119, 182, 0.3); /* Sombra sutil con color primario */
+}
+@media (min-width: 480px) {
+    .boton {
+        width: auto;
+    }
+}
+.boton:hover {
+    cursor: pointer;
+    background-color: #005F91; /* Tono más oscuro de azul al pasar el ratón */
+    transform: translateY(-3px); /* Efecto de "levantamiento" */
+    box-shadow: 0px 6px 15px rgba(0, 119, 182, 0.4); /* Sombra más pronunciada */
+}
+
+
+/* ==============================
+   SOMBRA PARA CONTENEDORES
+============================== */
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(122,122,112,0.48);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(122,122,112,0.48);
+    box-shadow: 0px 5px 15px 0px rgba(122,122,112,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: transform .3s ease, box-shadow .3s ease; /* Animaciones */
+}
+.sombra:hover {
+    transform: translateY(-5px); /* Efecto de levantamiento */
+    box-shadow: 0px 10px 20px 0px rgba(122,122,112,0.6); /* Sombra más intensa al hover */
+}
+
+
+/* ==============================
+   UTILIDADES
+============================= */
+.flex {
+    display: flex;
+}
+.alinear-derecha {
+    justify-content: flex-end;
+    margin-top: 2rem; /* Ajusta el valor según lo que necesites */
+}
+.w-sm-100 {
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+
+/* ==============================
+   NAVEGACIÓN PRINCIPAL
+============================== */
+.nav-bg {
+    background-color: var(--negro); /* Nuevo color de fondo para la navegación (azul muy oscuro) */
+}
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 1rem;
+    transition: background-color .3s ease, color .3s ease, transform .2s ease; /* Animaciones */
+}
+.navegacion-principal a:hover {
+    background-color: var(--primario); /* Color primario al pasar el ratón */
+    color: var(--blanco); /* Texto blanco al pasar el ratón */
+    transform: translateY(-2px); /* Pequeño efecto de levantamiento */
+}
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row; /* Navegación horizontal en pantallas grandes */
+    }
+}
+
+/* ==============================
+   SECCIÓN HERO (PRESENTACIÓN)
+============================== */
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+.contenido-hero {
+    position: absolute;
+    background-color: rgb(0 0 0 / 60%); /* Overlay ligeramente más oscuro para mejor contraste */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+    font-size: 2.5rem;
+}
+.contenido-hero .ubicacion {
+    font-size: 1.4rem;
+    color: var(--blanco); /* Asegura que el texto de ubicación sea blanco */
+}
+.contenido-hero .ubicacion svg {
+    fill: var(--secundario); /* Color secundario para el icono de ubicación */
+}
+
+/* ==============================
+  SECCIÓN DE SERVICIOS
+============================== */
+@media (min-width: 768px) {
+   .sevicios {
+    display: grid;
+    grid-template-columns: repeat(3,1fr) ; /* los fr es para dividir el espacio en partes iguales */
+    column-gap: 1.3rem; /* Espacio entre columnas */
+   }
+}
+
+.servicio{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   transition: transform .3s ease, box-shadow .3s ease; /* Animaciones para la tarjeta de servicio */
+}
+.servicio:hover {
+    transform: translateY(-8px); /* Efecto de levantamiento más pronunciado */
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15); /* Sombra más intensa */
+}
+
+.servicio h3 {
+   color: var(--primario); /* Color primario para los títulos de servicio */
+   font-weight: normal;
+}
+
+.servicio p {
+   line-height: 2;
+   font-size: 1.8rem;
+   text-align: center; 
+   color: var(--texto-oscuro); /* Nuevo color para el texto del servicio */
+}
+
+.servicio .iconos {
+   height: 15rem;
+   width: 15rem;
+   background-color: var(--primario); /* Color primario para el fondo del icono */
+   border-radius: 50%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+   box-shadow: 0px 4px 10px rgba(0, 119, 182, 0.3); /* Sombra para los iconos con color primario */
+   transition: background-color .3s ease, transform .3s ease; /* Animaciones */
+}
+.servicio .iconos:hover {
+    background-color: #005F91; /* Tono más oscuro de azul al pasar el ratón */
+    transform: scale(1.08); /* Ligeramente más grande */
+}
+.servicio .iconos svg {
+    fill: var(--blanco); /* Iconos rellenos de blanco */
+    stroke: var(--blanco); /* Asegura el color del trazo si lo tiene */
+}
+
+/* ==============================
+  SECCIÓN DE CONTACTO
+============================== */
+.formulario {
+    background-color: var(--negro); /* Nuevo color de fondo para el formulario (azul muy oscuro) */
+    width: min(60rem, 100%); /* utilizar el valor más pequeño entre 60rem y 100% */
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2); /* Sombra para el formulario */
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--secundario); /* Color secundario para el título del formulario */
+}
+
+@media (min-width: 768px) {
+   .contenedor-campos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    grid-template-rows: auto auto 20rem; /* Dos filas para los campos y una para el mensaje */
+    column-gap: 2rem; /* Espacio entre columnas */
+    }
+    .campo:nth-child(3),
+    .campo:nth-child(4) {
+        grid-column: 1 / 3; /* Ocupa toda la fila */
+    }
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label {
+   color: var(--blanco); /* Labels en blanco */
+   font-weight: bold;
+   margin-bottom: .5rem;
+   display: block;
+   font-size: 1.8rem; /* Tamaño más grande para los labels */
+}
+
+.input-text{
+    width: 100%;
+    border: 1px solid var(--primario); /* Borde con color primario */
+    padding: 1.5rem;
+    border-radius: .5rem;
+    background-color: var(--blanco); /* Fondo blanco para los inputs */
+    color: var(--texto-oscuro); /* Color de texto para los inputs */
+    transition: border-color .3s ease, box-shadow .3s ease; /* Animaciones */
+}
+.input-text:focus {
+    outline: none;
+    border-color: var(--secundario); /* Color secundario al enfocar */
+    box-shadow: 0 0 0 .3rem rgba(72, 202, 228, 0.25); /* Sombra de enfoque con color secundario */
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    font-size: 1.4rem;
+    background-color: var(--negro); /* Nuevo color de fondo para el footer */
+    color: var(--blanco); /* Texto blanco para el footer */
+    padding: 2rem 0; /* Añadido padding para el footer */
+}
